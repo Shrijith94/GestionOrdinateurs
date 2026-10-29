@@ -66,3 +66,13 @@ jobs:
 
       - name: Push Client Blazor
         run: docker push "${{ env.DOCKER_ACCOUNT }}/gestionordinateurs-client:latest"
+
+      - name: Build images
+        env:
+          DOCKER_ACCOUNT: ${{ secrets.DOCKER_ACCOUNT }}
+        run: docker compose build
+
+      - name: Push images
+        env:
+          DOCKER_ACCOUNT: ${{ secrets.DOCKER_ACCOUNT }}
+        run: docker compose push
