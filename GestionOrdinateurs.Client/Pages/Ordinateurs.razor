@@ -1,0 +1,60 @@
+@page "/ordinateurs"
+@inject ApiOrdinateurs ApiOrdinateurs
+
+<PageTitle>Ordinateurs</PageTitle>
+
+<h1>Ordinateurs</h1>
+
+@if (!string.IsNullOrWhiteSpace(erreur))
+{
+    <div class="alert alert-danger">@erreur</div>
+}
+else if (ordinateurs is null)
+{
+    <p><em>Chargement...</em></p>
+}
+else if (ordinateurs.Count == 0)
+{
+    <p>Aucun ordinateur trouvé.</p>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Prix</th>
+                <th>Devise</th>
+                <th>Vendu</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var ordinateur in ordinateurs)
+            {
+                <tr>
+                    <td>@ordinateur.Nom</td>
+                    <td>@ordinateur.Prix.ToString("F2")</td>
+                    <td>EUR</td>
+                    <td>@(ordinateur.Vendu ? "Oui" : "Non")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<DtoOrdinateur>? ordinateurs;
+    private string? erreur;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            ordinateurs = await ApiOrdinateurs.ObtenirTousLesOrdinateursAsync();
+        }
+        catch (HttpRequestException exception)
+        {
+            erreur = "Impossible de charger les ordinateurs ("+exception.Message+")";
+        }
+    }
+}

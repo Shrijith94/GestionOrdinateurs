@@ -1,0 +1,2 @@
+Pour la partie [Authorize], j'ai mis que pour la modifiation, la suppression et l'ajout d'un ordinateur que seul l'admin peut le faire.
+Egalement pour la partie réparation pour simuler une réparation, seul l'admin peut le faire.

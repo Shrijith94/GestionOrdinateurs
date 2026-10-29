@@ -1,0 +1,21 @@
+1. Tout code doit avoir des commentaires (s'il ya une pertinence)
+
+2. La correction tiendra compte de la cohérence de l'ensemble de vos codes (nommage des proprietes, fonctions etc.)
+
+3. Toute suspicion d'utilisation d'IA pour écrire le code vaudra 0 directement.
+
+4. Le rendu ne se fait pas après la date de remise sauf pour ceux qui ont une dérogation administrative.
+
+5. Les devoirs rendus avec des codes ayant tout dans une seule classe, les méthodes mal nommés etc, perdront des points (-0,5pts  par manquement)
+
+6. Lors du rendu, avant de rendre, faites un "dotnet clean" sur votre solution et ensuite zipper juste le contenu de votre solution
+car sous moddle, il se charge deja de lier votre zip à votre nom lorsque vous le charger.
+A cet effet les arborescence bizarre vaudront aussi une perte de points évoluant au fur et à mesure des TPS (-1 pts).
+C'est à dire, si au TP1 vous le faites (-1), si vous le faites au TP2 (-2), si vous le faites au TP3 (-3), et ainsi de suite
+
+7. Tout TP est sur 20 avec 2 points bonus.
+
+8. La version de .net utilisé sera .net10.0 (version 10.0.401). 
+Ne préciser pas cette version exacte dans vos codes (dans un fichier exemple comme global.json) car je ne changerais pas vos codes.
+Et si erreur de compilation, vous aurez la note correspondante sans lecture de votre code.
+

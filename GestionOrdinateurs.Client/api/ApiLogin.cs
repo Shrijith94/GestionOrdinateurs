@@ -1,0 +1,43 @@
+using System.Net;
+using System.Net.Http.Json;
+using System.Text.Json;
+
+public class ApiLogin
+{
+    private readonly HttpClient _httpClientFactory;
+
+    public ApiLogin(HttpClient httpClientFactory)
+    {
+        _httpClientFactory = httpClientFactory;
+    }
+
+    public async Task<DtoAuthentificationReponse> recupererToken(string login)
+    {
+        var response = await _httpClientFactory.PostAsync($"/auth/login?login={login}",null);
+
+        if (response.IsSuccessStatusCode)
+        {
+            var tokenResponse = await response.Content.ReadFromJsonAsync<TokenResponse>(
+                new JsonSerializerOptions(JsonSerializerDefaults.Web));
+
+            if (string.IsNullOrWhiteSpace(tokenResponse?.Token))
+            {
+                return new DtoAuthentificationReponse(
+                    (int)HttpStatusCode.InternalServerError,
+                    null);
+            }
+
+            return new DtoAuthentificationReponse(200, tokenResponse.Token);
+        }
+        if(response.StatusCode == System.Net.HttpStatusCode.Unauthorized)
+        {
+            return new DtoAuthentificationReponse(401, null);
+        }
+        else
+        {
+            return new DtoAuthentificationReponse(((int)response.StatusCode), null);
+        }
+    }
+
+    private sealed record TokenResponse(string Token);
+}

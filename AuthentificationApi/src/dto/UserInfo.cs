@@ -1,0 +1,1 @@
+public record UserInfo(int Id, string Login, string Role);

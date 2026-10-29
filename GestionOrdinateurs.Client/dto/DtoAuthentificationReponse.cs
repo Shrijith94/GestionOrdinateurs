@@ -1,0 +1,1 @@
+public record DtoAuthentificationReponse(int CodeDeRetour, string? Token);

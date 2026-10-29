@@ -1,0 +1,60 @@
+@page "/reparations"
+@inject ApiReparations ApiReparations
+
+<PageTitle>Historique des réparations</PageTitle>
+
+<h1>Historique des réparations</h1>
+
+@if (!string.IsNullOrWhiteSpace(erreur))
+{
+    <div class="alert alert-danger">@erreur</div>
+}
+else if (reparations is null)
+{
+    <p><em>Chargement...</em></p>
+}
+else if (reparations.Count == 0)
+{
+    <p>Aucune réparation trouvée.</p>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Ordinateur</th>
+                <th>Technicien</th>
+                <th>Type de réparation</th>
+                <th>Date d'intervention</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var reparation in reparations)
+            {
+                <tr>
+                    <td>@reparation.NomOrdinateur</td>
+                    <td>@reparation.Technicien</td>
+                    <td>@reparation.TypeReparation</td>
+                    <td>@reparation.DateIntervention.ToString("dd/MM/yyyy HH:mm")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<DtoReparationHistorique>? reparations;
+    private string? erreur;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            reparations = await ApiReparations.ObtenirHistoriqueAsync();
+        }
+        catch (HttpRequestException exception)
+        {
+            erreur = "Impossible de charger les réparations ("+exception.Message+")";
+        }
+    }
+}

@@ -1,0 +1,72 @@
+@page "/login"
+
+@inject Blazored.SessionStorage.ISessionStorageService SessionStorage
+@inject NavigationManager Navigation
+@inject ApiLogin ApiLogin
+
+<h3>Login</h3>
+
+
+@if(!EstConnecter)
+{
+    <InputText @bind-Value="NomUtilisateur" class="form-control" />
+    <button class="btn btn-primary mt-2" @onclick="Connecter">
+        Connecter
+    </button>
+}
+@if(EstConnecter)
+{
+    <div class="alert alert-success mt-2">
+        Vous êtes déjà connecté.
+    </div>
+}
+
+@if(!string.IsNullOrEmpty(messageError))
+{
+    <div class="alert alert-danger mt-2">
+        @messageError
+    </div>
+}
+@code
+{
+    private string NomUtilisateur = "";
+    private string messageError = "";
+
+    private bool EstConnecter = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await VerifierConnexion();
+    }
+
+    private async Task VerifierConnexion()
+    {
+        var token = await SessionStorage.GetItemAsync<string>("token");
+        if(token != null)
+        {
+            EstConnecter = true;
+        }
+        else
+        {
+            EstConnecter = false;
+        }
+    }
+
+    private async Task Connecter()
+    {   
+        var token = await ApiLogin.recupererToken(NomUtilisateur);
+        if(token.CodeDeRetour == 200)
+        {
+            await SessionStorage.SetItemAsync("token", token.Token);
+            Navigation.NavigateTo("/");
+        }
+        if(token.CodeDeRetour == 401)
+        {
+            messageError = "Nom d'utilisateur incorrect.";
+        }
+        else
+        {
+            messageError = "Erreur lors de la récupération du token.";
+        }
+    }
+}
