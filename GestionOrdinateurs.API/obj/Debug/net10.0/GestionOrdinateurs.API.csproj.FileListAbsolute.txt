@@ -1,5 +1,6 @@
 S:\ING2\développement C# .DOTNET\GestionOrdinateurs\GestionOrdinateurs.API\bin\Debug\net10.0\appsettings.Development.json
 S:\ING2\développement C# .DOTNET\GestionOrdinateurs\GestionOrdinateurs.API\bin\Debug\net10.0\appsettings.json
+S:\ING2\développement C# .DOTNET\GestionOrdinateurs\GestionOrdinateurs.API\bin\Debug\net10.0\parcinfo.db
 S:\ING2\développement C# .DOTNET\GestionOrdinateurs\GestionOrdinateurs.API\bin\Debug\net10.0\GestionOrdinateurs.API.staticwebassets.endpoints.json
 S:\ING2\développement C# .DOTNET\GestionOrdinateurs\GestionOrdinateurs.API\bin\Debug\net10.0\GestionOrdinateurs.API.exe
 S:\ING2\développement C# .DOTNET\GestionOrdinateurs\GestionOrdinateurs.API\bin\Debug\net10.0\GestionOrdinateurs.API.deps.json
