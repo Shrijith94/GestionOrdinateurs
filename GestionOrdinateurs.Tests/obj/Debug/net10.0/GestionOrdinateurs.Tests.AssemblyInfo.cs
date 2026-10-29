@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GestionOrdinateurs.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+311977cd4b6fdeef0b7f0b9ec5aba8197b079504")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fc7f5cdcdeea7391b05c2d27d64e0c017f1b0c13")]
 [assembly: System.Reflection.AssemblyProductAttribute("GestionOrdinateurs.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GestionOrdinateurs.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

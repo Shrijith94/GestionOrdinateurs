@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GestionOrdinateurs.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f6caaf17b1f3c9f7d0aa017b50655468c342741a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fc7f5cdcdeea7391b05c2d27d64e0c017f1b0c13")]
 [assembly: System.Reflection.AssemblyProductAttribute("GestionOrdinateurs.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GestionOrdinateurs.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
