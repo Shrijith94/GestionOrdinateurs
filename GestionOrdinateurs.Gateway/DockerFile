@@ -5,12 +5,12 @@ FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 WORKDIR /src
 
 # Copy csproj and restore as distinct layers
-COPY GestionOrdinateurs.Gateway/GestionOrdinateurs.Gateway.csproj GestionOrdinateurs.Gateway/
-RUN dotnet restore GestionOrdinateurs.Gateway/GestionOrdinateurs.Gateway.csproj
+COPY ../GestionOrdinateurs.Gateway/GestionOrdinateurs.Gateway.csproj ./GestionOrdinateurs.Gateway/
+RUN dotnet restore ./GestionOrdinateurs.Gateway
 
 # Copy the remaining source code
-COPY GestionOrdinateurs.Gateway/ GestionOrdinateurs.Gateway/
-RUN dotnet publish GestionOrdinateurs.Gateway/GestionOrdinateurs.Gateway.csproj -c Release -o /app/publish --no-restore
+COPY ./GestionOrdinateurs.Gateway/ ./GestionOrdinateurs.Gateway/
+RUN dotnet publish ./GestionOrdinateurs.Gateway -c Release -o /app/publish --no-restore
 
 # Build runtime image
 FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS runtime
@@ -26,3 +26,4 @@ EXPOSE 5010
 
 # Define the entry point
 ENTRYPOINT ["dotnet", "GestionOrdinateurs.Gateway.dll"]
+
