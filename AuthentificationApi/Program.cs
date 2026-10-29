@@ -10,10 +10,12 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddHttpClient<IAuthentificationService, 
-    AuthentificationService>(client => 
-{ 
-    client.BaseAddress = new Uri("http://localhost:5075"); 
+builder.Services.AddHttpClient<IAuthentificationService,
+    AuthentificationService>(client =>
+{
+    client.BaseAddress = new Uri(
+        builder.Configuration["GestionOrdinateursApiUrl"]
+        ?? "http://localhost:5075");
 });
 
 builder.Services.AddCors(options =>
