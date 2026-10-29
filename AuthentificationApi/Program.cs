@@ -15,7 +15,7 @@ builder.Services.AddHttpClient<IAuthentificationService,
 {
     client.BaseAddress = new Uri(
         builder.Configuration["GestionOrdinateursApiUrl"]
-        ?? "http://localhost:5075");
+        ?? "http://authentification-api:5075");
 });
 
 builder.Services.AddCors(options =>
