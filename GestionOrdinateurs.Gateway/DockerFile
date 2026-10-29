@@ -2,7 +2,7 @@
 # Build
 # =========================
 FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
-WORKDIR /src
+WORKDIR /app
 
 # Copy csproj and restore as distinct layers
 COPY ../GestionOrdinateurs.Gateway/GestionOrdinateurs.Gateway.csproj ./GestionOrdinateurs.Gateway/
