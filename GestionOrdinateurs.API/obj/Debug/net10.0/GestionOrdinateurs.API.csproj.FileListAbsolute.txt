@@ -145,6 +145,7 @@ S:\ING2\développement C# .DOTNET\GestionOrdinateurs\GestionOrdinateurs.API\obj\
 S:\ING2\développement C# .DOTNET\GestionOrdinateurs\GestionOrdinateurs.API\obj\Debug\net10.0\GestionOrdinateurs.API.csproj.CoreCompileInputs.cache
 S:\ING2\développement C# .DOTNET\GestionOrdinateurs\GestionOrdinateurs.API\obj\Debug\net10.0\GestionOrdinateurs.API.MvcApplicationPartsAssemblyInfo.cs
 S:\ING2\développement C# .DOTNET\GestionOrdinateurs\GestionOrdinateurs.API\obj\Debug\net10.0\GestionOrdinateurs.API.MvcApplicationPartsAssemblyInfo.cache
+S:\ING2\développement C# .DOTNET\GestionOrdinateurs\GestionOrdinateurs.API\obj\Debug\net10.0\GestionOrdinateurs.API.sourcelink.json
 S:\ING2\développement C# .DOTNET\GestionOrdinateurs\GestionOrdinateurs.API\obj\Debug\net10.0\rjimswa.dswa.cache.json
 S:\ING2\développement C# .DOTNET\GestionOrdinateurs\GestionOrdinateurs.API\obj\Debug\net10.0\rjsmrazor.dswa.cache.json
 S:\ING2\développement C# .DOTNET\GestionOrdinateurs\GestionOrdinateurs.API\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json

@@ -5,6 +5,7 @@ S:\ING2\développement C# .DOTNET\GestionOrdinateurs\GestionOrdinateurs.Shared\o
 S:\ING2\développement C# .DOTNET\GestionOrdinateurs\GestionOrdinateurs.Shared\obj\Debug\net10.0\GestionOrdinateurs.Shared.AssemblyInfoInputs.cache
 S:\ING2\développement C# .DOTNET\GestionOrdinateurs\GestionOrdinateurs.Shared\obj\Debug\net10.0\GestionOrdinateurs.Shared.AssemblyInfo.cs
 S:\ING2\développement C# .DOTNET\GestionOrdinateurs\GestionOrdinateurs.Shared\obj\Debug\net10.0\GestionOrdinateurs.Shared.csproj.CoreCompileInputs.cache
+S:\ING2\développement C# .DOTNET\GestionOrdinateurs\GestionOrdinateurs.Shared\obj\Debug\net10.0\GestionOrdinateurs.Shared.sourcelink.json
 S:\ING2\développement C# .DOTNET\GestionOrdinateurs\GestionOrdinateurs.Shared\obj\Debug\net10.0\GestionOrdinateurs.Shared.dll
 S:\ING2\développement C# .DOTNET\GestionOrdinateurs\GestionOrdinateurs.Shared\obj\Debug\net10.0\refint\GestionOrdinateurs.Shared.dll
 S:\ING2\développement C# .DOTNET\GestionOrdinateurs\GestionOrdinateurs.Shared\obj\Debug\net10.0\GestionOrdinateurs.Shared.pdb

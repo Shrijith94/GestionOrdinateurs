@@ -18,6 +18,7 @@ S:\ING2\développement C# .DOTNET\GestionOrdinateurs\GestionOrdinateurs.Gateway\
 S:\ING2\développement C# .DOTNET\GestionOrdinateurs\GestionOrdinateurs.Gateway\obj\Debug\net10.0\GestionOrdinateurs.Gateway.csproj.CoreCompileInputs.cache
 S:\ING2\développement C# .DOTNET\GestionOrdinateurs\GestionOrdinateurs.Gateway\obj\Debug\net10.0\GestionOrdinateurs.Gateway.MvcApplicationPartsAssemblyInfo.cs
 S:\ING2\développement C# .DOTNET\GestionOrdinateurs\GestionOrdinateurs.Gateway\obj\Debug\net10.0\GestionOrdinateurs.Gateway.MvcApplicationPartsAssemblyInfo.cache
+S:\ING2\développement C# .DOTNET\GestionOrdinateurs\GestionOrdinateurs.Gateway\obj\Debug\net10.0\GestionOrdinateurs.Gateway.sourcelink.json
 S:\ING2\développement C# .DOTNET\GestionOrdinateurs\GestionOrdinateurs.Gateway\obj\Debug\net10.0\rjimswa.dswa.cache.json
 S:\ING2\développement C# .DOTNET\GestionOrdinateurs\GestionOrdinateurs.Gateway\obj\Debug\net10.0\rjsmrazor.dswa.cache.json
 S:\ING2\développement C# .DOTNET\GestionOrdinateurs\GestionOrdinateurs.Gateway\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
