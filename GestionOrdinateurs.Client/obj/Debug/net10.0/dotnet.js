@@ -5,7 +5,7 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
   "mainAssemblyName": "GestionOrdinateurs.Client",
   "applicationEnvironment": "Development",
   "resources": {
-    "hash": "sha256-tHnSKILl9yBk1/oi2dQEnLoCUGfzJEx5OhIMn0QrnH4=",
+    "hash": "sha256-Cuihcq3t8quws1+iy8m+L32GIUlUvQLR2Jt5vTDDmtY=",
     "jsModuleNative": [
       {
         "name": "dotnet.native.b6l13xorvf.js"
@@ -1296,16 +1296,16 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
       },
       {
         "virtualPath": "GestionOrdinateurs.Client.wasm",
-        "name": "GestionOrdinateurs.Client.22gur5jnz0.wasm",
-        "hash": "sha256-NjRIP0dAXQqo+ZkXBfk+JoBx+ThF86jHQsOFeiNAx38=",
+        "name": "GestionOrdinateurs.Client.vnka7m9fpm.wasm",
+        "hash": "sha256-G1bTJLwPTZIiI1vsNWFZgKhFLjRfZ3CovDpeVCg3uyE=",
         "cache": "force-cache"
       }
     ],
     "pdb": [
       {
         "virtualPath": "GestionOrdinateurs.Client.pdb",
-        "name": "GestionOrdinateurs.Client.llmy4ohg14.pdb",
-        "hash": "sha256-6Zpj/CUdlXpiofsoPDphFAGuSalkfDyV/1aahrFr6uI=",
+        "name": "GestionOrdinateurs.Client.hdzak5dxfa.pdb",
+        "hash": "sha256-a1YBaFwTjO/b8XysHoauD0n6U9mxNinG13Krm9AZIAE=",
         "cache": "force-cache"
       }
     ],

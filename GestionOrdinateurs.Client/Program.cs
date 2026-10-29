@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using GestionOrdinateurs.Client;
 using Blazored.SessionStorage;
 
-//test
+
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 
 builder.RootComponents.Add<App>("#app");
