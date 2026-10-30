@@ -1,4 +1,5 @@
 using AuthentificationApi.src.service;
+using MySecureApi;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,7 +29,7 @@ builder.Services.AddCors(options =>
     });
 });
 
-
+builder.Services.AddScoped<KeycloakAuthService>();
 
 var app = builder.Build();
 

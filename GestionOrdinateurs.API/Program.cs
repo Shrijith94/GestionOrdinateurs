@@ -47,40 +47,75 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
-
+// l'ancienne configuration JWT peut être décommenter s'il y a un problème avec keycloak
 
 // Configuration JWT
-var jwtKey = builder.Configuration["Jwt:Key"] ?? "";
-var key = Encoding.ASCII.GetBytes(jwtKey);
+// var jwtKey = builder.Configuration["Jwt:Key"] ?? "";
+// var key = Encoding.ASCII.GetBytes(jwtKey);
+
+// builder.Services.AddAuthentication(options =>
+// {
+//     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+//     options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+// }).AddJwtBearer(options =>
+// {
+//     options.RequireHttpsMetadata = false;
+//     options.SaveToken = true;
+//     options.TokenValidationParameters = new TokenValidationParameters
+//     {
+//         ValidateIssuerSigningKey = true,
+//         IssuerSigningKey = new SymmetricSecurityKey(key),
+//         ValidateIssuer = false,
+//         ValidateAudience = false
+//     };
+//     options.Events = new JwtBearerEvents
+//         {
+//             OnTokenValidated = context =>
+//             {
+//                 Console.WriteLine($"Utilisateur utilisant un Token Valide --- {context.Principal?.Identity?.Name ?? "Anonymous"}");
+//                 return Task.CompletedTask;
+//             },
+//             OnAuthenticationFailed = context =>
+//             {
+//                 Console.WriteLine("Token Invalide");
+//                 return Task.CompletedTask;
+//             }
+//         };
+// });
+
 
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
     options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-}).AddJwtBearer(options =>
+})
+.AddJwtBearer(options =>
 {
     options.RequireHttpsMetadata = false;
     options.SaveToken = true;
+    options.MetadataAddress = $"http://keycloak:8080/realms/{builder.Configuration["Keycloak:Realm"]}/.well-known/openid-configuration";
     options.TokenValidationParameters = new TokenValidationParameters
     {
+        ValidateIssuer = true,
+        ValidIssuer = $"http://localhost:8080/realms/{builder.Configuration["Keycloak:Realm"]}",
+
+        ValidateAudience = true,
+        ValidAudience = "efrei-api",
+
         ValidateIssuerSigningKey = true,
-        IssuerSigningKey = new SymmetricSecurityKey(key),
-        ValidateIssuer = false,
-        ValidateAudience = false
-    };
-    options.Events = new JwtBearerEvents
+        ValidateLifetime = false, 
+
+       
+        IssuerSigningKeyResolver = (token, securityToken, kid, parameters) =>
         {
-            OnTokenValidated = context =>
-            {
-                Console.WriteLine($"Utilisateur utilisant un Token Valide --- {context.Principal?.Identity?.Name ?? "Anonymous"}");
-                return Task.CompletedTask;
-            },
-            OnAuthenticationFailed = context =>
-            {
-                Console.WriteLine("Token Invalide");
-                return Task.CompletedTask;
-            }
-        };
+            var client = new HttpClient();
+            var keyUri = $"http://keycloak:8080/realms/{builder.Configuration["Keycloak:Realm"]}/protocol/openid-connect/certs";
+            var response = client.GetAsync(keyUri).Result;
+            var keys = new JsonWebKeySet(response.Content.ReadAsStringAsync().Result);
+
+            return keys.GetSigningKeys();
+        }
+    };
 });
 
 // Enregistre le service en Scoped (instance par requête HTTP)

@@ -10,6 +10,7 @@
 @if(!EstConnecter)
 {
     <InputText @bind-Value="NomUtilisateur" class="form-control" />
+    <InputText @bind-Value="MotDePasse" class="form-control" />
     <button class="btn btn-primary mt-2" @onclick="Connecter">
         Connecter
     </button>
@@ -31,6 +32,8 @@
 {
     private string NomUtilisateur = "";
     private string messageError = "";
+
+    private string MotDePasse = "";
 
     private bool EstConnecter = false;
 
@@ -54,7 +57,7 @@
 
     private async Task Connecter()
     {   
-        var token = await ApiLogin.recupererToken(NomUtilisateur);
+        var token = await ApiLogin.recupererToken(NomUtilisateur, MotDePasse);
         if(token.CodeDeRetour == 200)
         {
             await SessionStorage.SetItemAsync("token", token.Token);
