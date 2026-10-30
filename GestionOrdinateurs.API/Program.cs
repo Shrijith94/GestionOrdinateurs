@@ -48,6 +48,7 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 // l'ancienne configuration JWT peut être décommenter s'il y a un problème avec keycloak
+// décommenter aussi le authcontroller qui utilise le service IAuthentificationService pour générer le token JWT
 
 // Configuration JWT
 // var jwtKey = builder.Configuration["Jwt:Key"] ?? "";
